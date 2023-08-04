@@ -1,14 +1,3 @@
-
-### You need to run first the EUREKA discovery server or you will get this error
-![](screenshots/2023-08-03-22-47-02.png)
-
-
-### Currency Conversion Service
-`installed starters`
-1. Lombok
-
-`properties`
-```yaml
 server:
   port: 8100
 
@@ -39,16 +28,3 @@ management:
   tracing:
     sampling:
       probability: 1.0
-```
-
-### Naming Server - Eureka Server
-`INSTALLED STARTERS`
-1. Lombok
-2. Eureka Server
-3. Cloud Config (Client)
-4. DevTools
-5. Actuator
-
-```yaml
-
-```

@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+spring:
+  config:
+    import:
+    - 'optional:configserver:'
+  
+  output:
+    ansi:
+      enabled: always
+
+logging:
+  pattern:
+    console: '%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){cyan} %clr([%15.15t]){yellow} %clr(:){red} %clr(%m){magenta}%n'
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
