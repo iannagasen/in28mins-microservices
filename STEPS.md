@@ -36,3 +36,23 @@ public interface StoreClient {
     @FeignClient(name = "stores", url="http://sample.com")
     ```
 - The load-balancer client above will want to discover the physical addresses for the "stores" service. If your application is a Eureka client then it will resolve the service in the Eureka service registry. If you don’t want to use Eureka, you can configure a list of servers in your external configuration using SimpleDiscoveryClient.
+
+
+
+
+### Cloud Config Server
+1. Create the folder where you will store your configs
+2. Create the properties file
+   ![](screenshots/2023-08-05-15-36-19.png)
+3. initialize git (`git init`), add all and commit
+4. Create the Config Server
+5. Annotate the application with `@EnableConfigServer`
+6. Add the properties, uri must be `file://{PROPERTIES_DIRECTORY}`
+   - ```properties
+     spring.application.name=spring-cloud-config-server
+     server.port=8888
+     spring.cloud.config.server.git.uri=file:///C:/Users/user/Desktop/Microservice/configs
+     ```
+7. Test if it is working. Endpoints - `http://localhost:{PORT}/{PROPERTY_FILE_NAME}/{ACTIVE_PROFILE}`, default active profile is = `default`
+   - `http://localhost:8888/limits-service/default`
+     - ![](screenshots/2023-08-05-15-39-50.png)

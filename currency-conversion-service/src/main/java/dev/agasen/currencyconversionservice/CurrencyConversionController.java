@@ -30,7 +30,7 @@ public class CurrencyConversionController {
     @PathVariable String to,
     @PathVariable BigDecimal quantity
   ) {
-
+    
     ResponseEntity<CurrencyConversion> res = restTemplate.getForEntity(
       "http://localhost:8000/currency-exchange/from/{from}/to/{to}", 
       CurrencyConversion.class, 

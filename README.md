@@ -3,6 +3,23 @@
 ![](screenshots/2023-08-03-22-47-02.png)
 
 
+### Endpoints:
+
+1. Eureka Naming Server: 
+   - `http://localhost:8761/`
+
+2. Currency Conversion Service
+   - `http://localhost:8100/currency-conversion/from/{from}/to/{to}/quantity/{quantity}`
+      - Endpoint using restTemplate
+      - Ex: `http://localhost:8100/currency-conversion/from/USD/to/PHP/quantity/20`
+   -  `http://localhost:8100/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}`
+      - Endpoint using Feign Client
+      - Ex: `http://localhost:8100/currency-conversion-feign/from/USD/to/PHP/quantity/{quantity}`
+
+3. Config Server
+   - 
+
+
 ### Currency Conversion Service
 `installed starters`
 1. Lombok
@@ -52,3 +69,10 @@ management:
 ```yaml
 
 ```
+
+
+### Config Server
+`INSTALLED STARTERS`
+1. Lombok
+2. DevTools
+3. Cloud Config (Server)
